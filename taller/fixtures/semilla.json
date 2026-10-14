@@ -1,0 +1,33 @@
+[
+{
+  "model": "taller.mecanico",
+  "pk": 1,
+  "fields": {
+    "nombre": "1111",
+    "especialidad": "1111"
+  }
+},
+{
+  "model": "taller.vehiculo",
+  "pk": 1,
+  "fields": {
+    "placa": "1111",
+    "marca": "1111",
+    "modelo": "111",
+    "anio": 1111,
+    "propietario": "1111",
+    "telefono": "11111"
+  }
+},
+{
+  "model": "taller.orden",
+  "pk": 1,
+  "fields": {
+    "vehiculo": 1,
+    "mecanico": 1,
+    "descripcion": "11111",
+    "estado": "Recibido",
+    "fecha_ingreso": "2026-10-14"
+  }
+}
+]
