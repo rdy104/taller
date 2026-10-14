@@ -8,6 +8,14 @@
   }
 },
 {
+  "model": "taller.mecanico",
+  "pk": 2,
+  "fields": {
+    "nombre": "22222",
+    "especialidad": "22222"
+  }
+},
+{
   "model": "taller.vehiculo",
   "pk": 1,
   "fields": {
@@ -20,6 +28,18 @@
   }
 },
 {
+  "model": "taller.vehiculo",
+  "pk": 2,
+  "fields": {
+    "placa": "2222",
+    "marca": "2222",
+    "modelo": "2222",
+    "anio": 1990,
+    "propietario": "2222",
+    "telefono": "22222"
+  }
+},
+{
   "model": "taller.orden",
   "pk": 1,
   "fields": {
@@ -27,6 +47,17 @@
     "mecanico": 1,
     "descripcion": "11111",
     "estado": "Recibido",
+    "fecha_ingreso": "2026-10-14"
+  }
+},
+{
+  "model": "taller.orden",
+  "pk": 2,
+  "fields": {
+    "vehiculo": 2,
+    "mecanico": 2,
+    "descripcion": "22222",
+    "estado": "Listo",
     "fecha_ingreso": "2026-10-14"
   }
 }
