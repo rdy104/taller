@@ -68,7 +68,7 @@
   "fields": {
     "vehiculo": 1,
     "mecanico": 1,
-    "descripcion": "Revisión Frenos",
+    "descripcion": "Revision frenos",
     "estado": "En reparación",
     "fecha_ingreso": "2026-10-18"
   }
