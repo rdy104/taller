@@ -1,0 +1,26 @@
+{% extends "taller/base.html" %}
+ 
+{% block titulo %}Seguimiento {{ codigo }}{% endblock %}
+ 
+{% block contenido %}
+<h1>Seguimiento <span class="codigo">{{ codigo }}</span></h1>
+ 
+{% if orden %}
+<div class="tarjeta">
+    <p><strong>Estado:</strong>
+       <span class="estado e-{{ orden.estado|slugify }}">{{ orden.estado }}</span></p>
+    <p><strong>Vehículo:</strong> {{ orden.vehiculo.placa }} —
+       {{ orden.vehiculo.marca }} {{ orden.vehiculo.modelo }}</p>
+    <p><strong>Trabajo:</strong> {{ orden.descripcion }}</p>
+    <p><strong>Mecánico a cargo:</strong> {{ orden.mecanico.nombre }}</p>
+    <p><strong>Ingreso:</strong> {{ orden.fecha_ingreso|date:"d/m/Y" }}</p>
+</div>
+{% else %}
+<div class="tarjeta">
+    <p class="aviso">No encontramos ninguna orden con el código {{ codigo }}.
+       Revisa que esté bien escrito.</p>
+</div>
+{% endif %}
+ 
+<p><a href="{% url 'seguimiento_buscar' %}">← Consultar otro código</a></p>
+{% endblock %}

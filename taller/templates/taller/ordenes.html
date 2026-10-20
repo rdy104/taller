@@ -11,10 +11,11 @@
  
 <table>
     <tr>
-        <th>Placa</th><th>Trabajo</th><th>Mecánico</th><th>Estado</th><th>Ingreso</th>
+        <th>Código</th><th>Placa</th><th>Trabajo</th><th>Mecánico</th><th>Estado</th><th>Ingreso</th>
     </tr>
     {% for o in ordenes %}
     <tr>
+        <td class="codigo">{{ o.codigo }}</td>
         <td><a href="{% url 'ficha' o.vehiculo.pk %}">{{ o.vehiculo.placa }}</a></td>
         <td>{{ o.descripcion }}</td>
         <td>{{ o.mecanico.nombre }}</td>

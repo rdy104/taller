@@ -1,0 +1,14 @@
+{% extends "taller/base.html" %}
+ 
+{% block titulo %}Seguimiento{% endblock %}
+ 
+{% block contenido %}
+<h1>Seguimiento de tu vehículo</h1>
+<div class="tarjeta">
+    <p>Escribe el código que te entregaron al dejar el vehículo en el taller.</p>
+    <form method="get">
+        <input type="text" name="codigo" placeholder="Ej.: K7M2QX" maxlength="8" required>
+        <button type="submit">Consultar</button>
+    </form>
+</div>
+{% endblock %}

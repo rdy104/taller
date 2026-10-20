@@ -1,109 +1,114 @@
-[
-{
-  "model": "taller.mecanico",
-  "pk": 1,
-  "fields": {
-    "nombre": "Carlos Quispe",
-    "especialidad": "Motor"
-  }
-},
-{
-  "model": "taller.mecanico",
-  "pk": 2,
-  "fields": {
-    "nombre": "Marta Flores",
-    "especialidad": "Electricidad"
-  }
-},
-{
-  "model": "taller.vehiculo",
-  "pk": 1,
-  "fields": {
-    "placa": "1234-ABC",
-    "marca": "Toyota",
-    "modelo": "Hilux",
-    "anio": 2018,
-    "propietario": "Luis Vargas",
-    "telefono": "1111111"
-  }
-},
-{
-  "model": "taller.vehiculo",
-  "pk": 2,
-  "fields": {
-    "placa": "5678-XYZ",
-    "marca": "Suzuki",
-    "modelo": "swift",
-    "anio": 2015,
-    "propietario": "Ana Choque",
-    "telefono": "22222222"
-  }
-},
-{
-  "model": "taller.vehiculo",
-  "pk": 3,
-  "fields": {
-    "placa": "9012-DEF",
-    "marca": "Nissan",
-    "modelo": "Sentra",
-    "anio": 2020,
-    "propietario": "Pedro Rojas",
-    "telefono": "333333333"
-  }
-},
-{
-  "model": "taller.orden",
-  "pk": 1,
-  "fields": {
-    "vehiculo": 1,
-    "mecanico": 1,
-    "descripcion": "Cambio aceite y filtros",
-    "estado": "Entregado",
-    "fecha_ingreso": "2026-10-18"
-  }
-},
-{
-  "model": "taller.orden",
-  "pk": 2,
-  "fields": {
-    "vehiculo": 1,
-    "mecanico": 1,
-    "descripcion": "Revision frenos",
-    "estado": "En reparaciÃ³n",
-    "fecha_ingreso": "2026-10-18"
-  }
-},
-{
-  "model": "taller.orden",
-  "pk": 3,
-  "fields": {
-    "vehiculo": 2,
-    "mecanico": 2,
-    "descripcion": "Falla alternador",
-    "estado": "Recibido",
-    "fecha_ingreso": "2026-10-18"
-  }
-},
-{
-  "model": "taller.orden",
-  "pk": 4,
-  "fields": {
-    "vehiculo": 3,
-    "mecanico": 2,
-    "descripcion": "Cambio bateria",
-    "estado": "Listo",
-    "fecha_ingreso": "2026-10-18"
-  }
-},
-{
-  "model": "taller.orden",
-  "pk": 5,
-  "fields": {
-    "vehiculo": 3,
-    "mecanico": 1,
-    "descripcion": "Alineacion",
-    "estado": "Recibido",
-    "fecha_ingreso": "2026-10-18"
-  }
-}
-]
+[
+{
+  "model": "taller.mecanico",
+  "pk": 1,
+  "fields": {
+    "nombre": "Carlos Quispe",
+    "especialidad": "Motor"
+  }
+},
+{
+  "model": "taller.mecanico",
+  "pk": 2,
+  "fields": {
+    "nombre": "Marta Flores",
+    "especialidad": "Electricidad"
+  }
+},
+{
+  "model": "taller.vehiculo",
+  "pk": 1,
+  "fields": {
+    "placa": "1234-ABC",
+    "marca": "Toyota",
+    "modelo": "Hilux",
+    "anio": 2018,
+    "propietario": "Luis Vargas",
+    "telefono": "1111111"
+  }
+},
+{
+  "model": "taller.vehiculo",
+  "pk": 2,
+  "fields": {
+    "placa": "5678-XYZ",
+    "marca": "Suzuki",
+    "modelo": "swift",
+    "anio": 2015,
+    "propietario": "Ana Choque",
+    "telefono": "22222222"
+  }
+},
+{
+  "model": "taller.vehiculo",
+  "pk": 3,
+  "fields": {
+    "placa": "9012-DEF",
+    "marca": "Nissan",
+    "modelo": "Sentra",
+    "anio": 2020,
+    "propietario": "Pedro Rojas",
+    "telefono": "333333333"
+  }
+},
+{
+  "model": "taller.orden",
+  "pk": 1,
+  "fields": {
+    "vehiculo": 1,
+    "mecanico": 1,
+    "descripcion": "Cambio aceite y filtros",
+    "estado": "Entregado",
+    "fecha_ingreso": "2026-10-18",
+    "codigo": "DAX6G2"
+  }
+},
+{
+  "model": "taller.orden",
+  "pk": 2,
+  "fields": {
+    "vehiculo": 1,
+    "mecanico": 1,
+    "descripcion": "Revision frenos",
+    "estado": "En reparación",
+    "fecha_ingreso": "2026-10-18",
+    "codigo": "2PE45T"
+  }
+},
+{
+  "model": "taller.orden",
+  "pk": 3,
+  "fields": {
+    "vehiculo": 2,
+    "mecanico": 2,
+    "descripcion": "Falla alternador",
+    "estado": "Recibido",
+    "fecha_ingreso": "2026-10-18",
+    "codigo": "JYFU95"
+  }
+},
+{
+  "model": "taller.orden",
+  "pk": 4,
+  "fields": {
+    "vehiculo": 3,
+    "mecanico": 2,
+    "descripcion": "Cambio bateria",
+    "estado": "Listo",
+    "fecha_ingreso": "2026-10-18",
+    "codigo": "MDDSAV"
+  }
+},
+{
+  "model": "taller.orden",
+  "pk": 5,
+  "fields": {
+    "vehiculo": 3,
+    "mecanico": 1,
+    "descripcion": "Alineacion",
+    "estado": "Recibido",
+    "fecha_ingreso": "2026-10-18",
+    "codigo": "8MGGXH"
+  }
+}
+]

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Mecanico, Vehiculo, Orden
  
  
@@ -16,3 +16,16 @@ def ficha(request, pk):
     historial = vehiculo.ordenes.order_by("-fecha_ingreso")
     contexto = {"vehiculo": vehiculo, "historial": historial}
     return render(request, "taller/ficha.html", contexto)
+
+def seguimiento_buscar(request):
+    codigo = request.GET.get("codigo", "").strip().upper()
+    if codigo:
+        return redirect("seguimiento", codigo=codigo)
+    return render(request, "taller/seguimiento_buscar.html")
+ 
+ 
+def seguimiento(request, codigo):
+    orden = Orden.objects.filter(codigo=codigo.upper()).first()
+    contexto = {"orden": orden, "codigo": codigo.upper()}
+    estado = 200 if orden else 404
+    return render(request, "taller/seguimiento.html", contexto, status=estado)
