@@ -1,6 +1,7 @@
 import random
 from datetime import date
 from django.db import models
+from django.utils import timezone
  
 # Sin 0/O ni 1/I para que el código no se confunda al leerlo o dictarlo
 ALFABETO = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
@@ -66,6 +67,35 @@ class Orden(models.Model):
         if not self.codigo:  # NUEVO
             self.codigo = generar_codigo()  # NUEVO
         super().save(*args, **kwargs)  # NUEVO
+        
+    def historial(self):
+        return self.eventos.order_by("-hora")
+ 
+    def ultimo_evento(self):
+        return self.historial().first()
+
  
     def __str__(self):
         return f"{self.vehiculo.placa}: {self.descripcion}"
+
+class Punto(models.Model):
+    nombre = models.CharField(max_length=60)
+ 
+    class Meta:
+        verbose_name = "Punto de control"
+        verbose_name_plural = "Puntos de control"
+ 
+    def __str__(self):
+        return self.nombre
+ 
+ 
+class Evento(models.Model):
+    orden = models.ForeignKey(
+        Orden, on_delete=models.CASCADE, related_name="eventos")
+    punto = models.ForeignKey(
+        Punto, on_delete=models.PROTECT, related_name="eventos")
+    hora = models.DateTimeField(default=timezone.now)
+ 
+    def __str__(self):
+        return f"{self.orden.codigo} en {self.punto.nombre}"
+

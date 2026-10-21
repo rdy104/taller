@@ -1,0 +1,12 @@
+{% extends "taller/base.html" %}
+ 
+{% block titulo %}Etiqueta {{ orden.codigo }}{% endblock %}
+ 
+{% block contenido %}
+<div class="tarjeta" style="text-align:center">
+    <h1 class="codigo">{{ orden.codigo }}</h1>
+    <img src="{% url 'qr' orden.codigo %}" alt="Código QR de la orden {{ orden.codigo }}" width="260">
+    <p>{{ orden.vehiculo.placa }} — {{ orden.descripcion }}</p>
+    <p><small>Escanéalo con la cámara del celular para registrar el paso por un punto.</small></p>
+</div>
+{% endblock %}

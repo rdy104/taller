@@ -1,0 +1,25 @@
+{% extends "taller/base.html" %}
+ 
+{% block cabecera %}<meta http-equiv="refresh" content="5">{% endblock %}
+ 
+{% block titulo %}Tablero{% endblock %}
+ 
+{% block contenido %}
+<h1>Tablero de posiciones</h1>
+<table>
+    <tr><th>Código</th><th>Vehículo</th><th>Última posición</th><th>Hora</th></tr>
+    {% for o in ordenes %}
+    {% with ultimo=o.ultimo_evento %}
+    <tr>
+        <td class="codigo"><a href="{% url 'seguimiento' o.codigo %}">{{ o.codigo }}</a></td>
+        <td>{{ o.vehiculo.placa }}</td>
+        <td>{% if ultimo %}{{ ultimo.punto.nombre }}{% else %}—{% endif %}</td>
+        <td>{% if ultimo %}{{ ultimo.hora|date:"H:i:s" }}{% endif %}</td>
+    </tr>
+    {% endwith %}
+    {% empty %}
+    <tr><td colspan="4">No hay órdenes en curso.</td></tr>
+    {% endfor %}
+</table>
+<p><small>Se actualiza solo cada 5 segundos.</small></p>
+{% endblock %}

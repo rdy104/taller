@@ -1,5 +1,7 @@
 {% extends "taller/base.html" %}
  
+{% block cabecera %}{% if orden %}<meta http-equiv="refresh" content="5">{% endif %}{% endblock %}
+ 
 {% block titulo %}Seguimiento {{ codigo }}{% endblock %}
  
 {% block contenido %}
@@ -14,6 +16,28 @@
     <p><strong>Trabajo:</strong> {{ orden.descripcion }}</p>
     <p><strong>Mecánico a cargo:</strong> {{ orden.mecanico.nombre }}</p>
     <p><strong>Ingreso:</strong> {{ orden.fecha_ingreso|date:"d/m/Y" }}</p>
+</div>
+ 
+<div class="tarjeta">
+    <h2>Dónde está ahora</h2>
+    {% with ultimo=orden.ultimo_evento %}
+    {% if ultimo %}
+    <p class="posicion">{{ ultimo.punto.nombre }}</p>
+    <p>desde las {{ ultimo.hora|date:"H:i:s" }}</p>
+    {% else %}
+    <p>Todavía no se registró ningún paso.</p>
+    {% endif %}
+    {% endwith %}
+ 
+    <h3>Historial</h3>
+    <ul class="linea">
+        {% for e in orden.historial %}
+        <li>{{ e.hora|date:"H:i:s" }} — {{ e.punto.nombre }}</li>
+        {% empty %}
+        <li>Sin movimientos.</li>
+        {% endfor %}
+    </ul>
+    <p><small>Esta página se actualiza sola cada 5 segundos.</small></p>
 </div>
 {% else %}
 <div class="tarjeta">
